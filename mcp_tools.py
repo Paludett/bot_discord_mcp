@@ -6,7 +6,7 @@ from mcp.client.stdio import stdio_client
 
 from config import SERVIDORES_MCP
 
-sessao_da_ferramenta: dict[str, ClientSession] = {}  # nome da ferramenta -> servidor MCP
+sessao_da_ferramenta: dict[str, ClientSession] = {}
 
 
 async def conectar_servidor_mcp(pilha: AsyncExitStack, parametros) -> list:
@@ -18,7 +18,6 @@ async def conectar_servidor_mcp(pilha: AsyncExitStack, parametros) -> list:
     declaracoes = []
     for ferramenta in (await sessao.list_tools()).tools:
         sessao_da_ferramenta[ferramenta.name] = sessao
-        # O MCP descreve os parâmetros em JSON Schema, que o Gemini aceita direto.
         declaracoes.append(
             types.FunctionDeclaration(
                 name=ferramenta.name,

@@ -3,7 +3,7 @@ from contextlib import AsyncExitStack
 
 import llm
 from config import DISCORD_TOKEN
-from discord_bot import bot
+from discord_bot import bo
 from mcp_tools import conectar_todos
 
 

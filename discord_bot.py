@@ -10,16 +10,16 @@ intents = discord.Intents.default()
 intents.message_content = True
 bot = discord.Client(intents=intents)
 
-conversas: dict[int, dict] = {}  
-ultimo_uso: dict[int, float] = {} 
+conversas: dict[int, dict] = {}
+ultimo_uso: dict[int, float] = {}
 
 
-@bot.event
+@bot.even
 async def on_ready():
     print(f"Online como {bot.user} | modelo: {GEMINI_MODEL}")
 
 
-@bot.event
+@bot.even
 async def on_message(msg: discord.Message):
     if msg.author.bot or bot.user not in msg.mentions:
         return
