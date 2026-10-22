@@ -1,0 +1,6 @@
+discord.py>=2.7,<3
+python-dotenv>=1.0,<2
+google-genai>=2.30,<3
+mcp>=2.3,<3
+mcp-server-fetch==2026.10.19
+mcp-server-time==2026.10.19
