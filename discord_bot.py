@@ -14,12 +14,12 @@ conversas: dict[int, dict] = {}
 ultimo_uso: dict[int, float] = {}
 
 
-@bot.even
+@bot.event
 async def on_ready():
     print(f"Online como {bot.user} | modelo: {GEMINI_MODEL}")
 
 
-@bot.even
+@bot.event
 async def on_message(msg: discord.Message):
     if msg.author.bot or bot.user not in msg.mentions:
         return
