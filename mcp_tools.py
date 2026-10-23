@@ -38,6 +38,7 @@ async def conectar_todos(pilha: AsyncExitStack) -> list:
 
 
 async def executar_ferramenta(nome: str, argumentos: dict) -> str:
+    """Roda a ferramenta no servidor MCP dono dela. Erros viram texto para o modelo."""
     sessao = sessao_da_ferramenta.get(nome)
     if sessao is None:
         return f"A ferramenta {nome} não existe."

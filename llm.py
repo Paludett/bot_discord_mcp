@@ -21,6 +21,7 @@ def _passageiro(erro: errors.APIError) -> bool:
 
 
 async def gerar(historico: list[types.Content]):
+    """Chama o Gemini com retry (backoff) em 429/5xx e cai para o modelo de reserva."""
     modelos = [GEMINI_MODEL]
     if GEMINI_MODEL_RESERVA and GEMINI_MODEL_RESERVA != GEMINI_MODEL:
         modelos.append(GEMINI_MODEL_RESERVA)
